@@ -36,7 +36,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <NavBar
+          totalitems={this.state.Items.filter((c) => c.value > 0).length}
+        />
         <main className="container">
           <ShoppingList
             onDelete={this.handleDelete}
