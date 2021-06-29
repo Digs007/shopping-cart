@@ -20,6 +20,13 @@ class App extends Component {
     this.setState({ Items });
     // console.log(Items);
   };
+  handleDecrement = (item) => {
+    const Items = [...this.state.Items];
+    const index = Items.indexOf(item);
+    Items[index].value--;
+    this.setState({ Items });
+    // console.log(Items);
+  };
   handleDelete = (itemId) => {
     const Items = this.state.Items.filter((c) => c.id !== itemId);
     this.setState({ Items });
@@ -41,9 +48,10 @@ class App extends Component {
         />
         <main className="container">
           <ShoppingList
-            onDelete={this.handleDelete}
             onReset={this.handleReset}
             onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement}
+            onDelete={this.handleDelete}
             Items={this.state.Items}
           />
         </main>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Item from "./item";
 class ShoppingList extends Component {
   render() {
-    const { onReset, onIncrement, onDelete, Items } = this.props;
+    const { onReset, onIncrement, onDecrement, onDelete, Items } = this.props;
     return (
       <div>
         <button onClick={onReset} className="btn btn-primary btn-sm m-2">
@@ -13,6 +13,7 @@ class ShoppingList extends Component {
             key={item.id}
             Item={item}
             onIncrement={onIncrement}
+            onDecrement={onDecrement}
             onDelete={onDelete}
           />
         ))}

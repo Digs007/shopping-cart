@@ -12,6 +12,13 @@ class Item extends Component {
           Increment
         </button>
         <button
+          onClick={() => this.props.onDecrement(this.props.Item)}
+          className="btn-primary btn-sm m-2"
+          disabled={this.props.Item.value === 0 ? "disabled" : ""}
+        >
+          Decrement
+        </button>
+        <button
           onClick={() => this.props.onDelete(this.props.Item.id)}
           className="btn btn-danger btn-sm m-2"
         >
