@@ -2,11 +2,15 @@ import React, { Component } from "react";
 import Item from "./item";
 class ShoppingList extends Component {
   render() {
-    const { onReset, onIncrement, onDecrement, onDelete, Items } = this.props;
+    const { onReset, onLoad, onIncrement, onDecrement, onDelete, Items } =
+      this.props;
     return (
       <div>
-        <button onClick={onReset} className="btn btn-primary btn-sm m-2">
-          Reset
+        <button onClick={onReset} className="btn btn-success m-2">
+          <i className="fa fa-refresh" aria-hidden="true" />
+        </button>
+        <button onClick={onLoad} className="btn btn-success m-2">
+          <i class="fa fa-recycle" aria-hidden="true"></i>
         </button>
         {Items.map((item) => (
           <Item

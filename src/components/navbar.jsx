@@ -5,8 +5,8 @@ class App extends Component {
     const { totalitems } = this.props;
     return (
       <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand">
-          Total{" "}
+        <a className="navbar-brand" href="/">
+          <i class="fa fa-shopping-cart fa-lg m-2" aria-hidden="true" />
           {
             <span className="badge badge-pill badge-secondary">
               {totalitems}

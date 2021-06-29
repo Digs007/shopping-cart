@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ShoppingList from "./components/shoppingList";
 import NavBar from "./components/navbar";
-import "./App.css";
 // import { timers } from "jquery";
 
 class App extends Component {
@@ -11,6 +10,7 @@ class App extends Component {
       { id: 2, value: 0 },
       { id: 3, value: 0 },
       { id: 4, value: 0 },
+      { id: 5, value: 0 },
     ],
   };
   handleIncrement = (item) => {
@@ -38,7 +38,9 @@ class App extends Component {
       return c;
     });
     this.setState({ Items });
-    // console.log(Items);
+  };
+  handleLoad = () => {
+    window.location.reload();
   };
   render() {
     return (
@@ -49,6 +51,7 @@ class App extends Component {
         <main className="container">
           <ShoppingList
             onReset={this.handleReset}
+            onLoad={this.handleLoad}
             onIncrement={this.handleIncrement}
             onDecrement={this.handleDecrement}
             onDelete={this.handleDelete}
