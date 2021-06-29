@@ -7,20 +7,31 @@ import "./App.css";
 class App extends Component {
   state = {
     Items: [
-      { id: 1, value: 2 },
+      { id: 1, value: 0 },
       { id: 2, value: 0 },
       { id: 3, value: 0 },
       { id: 4, value: 0 },
     ],
   };
   handleIncrement = (item) => {
-    console.log(item);
+    const Items = [...this.state.Items];
+    const index = Items.indexOf(item);
+    Items[index].value++;
+    this.setState({ Items });
+    // console.log(Items);
   };
   handleDelete = (itemId) => {
-    console.log(itemId);
+    const Items = this.state.Items.filter((c) => c.id !== itemId);
+    this.setState({ Items });
+    // console.log(Items);
   };
   handleReset = () => {
-    console.log("All reset to zero");
+    const Items = this.state.Items.map((c) => {
+      c.value = 0;
+      return c;
+    });
+    this.setState({ Items });
+    // console.log(Items);
   };
   render() {
     return (
